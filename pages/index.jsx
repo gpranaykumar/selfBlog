@@ -3,7 +3,6 @@ import { PostCard, Categories, PostWidget} from '../components'
 import {  getPostsPagination, getPostsPaginationSearch} from '../services'
 import {FeaturedPosts} from '../sections'
 import { useState, useEffect } from "react";
-
 export default function Home({postsProps, hasPreviousPageProps, hasNextPageProps, pageSizeProps}) {
   const [skip, setSkip] = useState(0);
   const [posts, setPosts] = useState(postsProps);
@@ -100,7 +99,7 @@ export default function Home({postsProps, hasPreviousPageProps, hasNextPageProps
 }
 
 export async function getStaticProps(){
-  const result = (await getPostsPagination(0)) || {}
+  const result = (await getPostsPagination(0)) || {postsProps: [] , hasPreviousPageProps: false, hasNextPageProps: false, pageSizeProps:0 }
   return {
     props: {
       postsProps: result.postsConnection.edges,
