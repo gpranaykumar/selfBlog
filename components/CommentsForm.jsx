@@ -45,7 +45,7 @@ const CommentsForm = ({ slug }) => {
 
                 setTimeout(() => {
                     setShowSuccessMessage(false)
-                }, 3000)
+                }, 10000)
             })
     }
     return (

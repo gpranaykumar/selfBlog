@@ -1,8 +1,19 @@
-import React from 'react';
-
+import React,{useState, useEffect} from 'react';
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import moment from 'moment';
-
 const PostDetail = ({ post }) => {
+  const [copyTextBtn,setCopyTextBtn] = useState(false)
+  const [copyText,setCopyText] = useState('copy')
+
+
+  useEffect(() => {
+    if(copyTextBtn){
+      setTimeout(() => {
+        setCopyTextBtn(false)
+        setCopyText('copy')
+      }, 3000)
+    }
+  },[copyTextBtn])
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
 
@@ -39,8 +50,24 @@ const PostDetail = ({ post }) => {
         );
         case 'code-block':
             return <>
+            <CopyToClipboard text={modifiedText}>
+              <div className='grid grid-cols-1 pb-2 px-1'>
+                <button
+                  className="flex justify-end"
+                  onClick={() => {
+                    setCopyTextBtn(true)
+                    setCopyText('copied')
+                  }}
+                  style={{ textAlign: "center", cursor: "pointer" }}
+                >
+                  {copyText} {copyTextBtn && <svg xmlns="http://www.w3.org/2000/svg" className="h-5 px-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                          </svg> }
+                </button>
+            </div>
+            </CopyToClipboard>
             <pre key={index}  className="mb-8 bg-itemD dark:border dark:shadow- dark:shadow-shadowD text-white overflow-x-auto p-2">
-            <code key={index} >{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</code>;
+              <code key={index} >{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</code>;
             </pre>
             </>
       default:
