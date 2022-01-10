@@ -18,7 +18,9 @@ module.exports = {
       shadowD: '#1D1E20',
       tSecD: '#a3a3a3',
       blue:'#1873EC',
-      indigo:'#4338ca'
+      indigo:'#4338ca',
+      lime: '#84cc16',
+      rose: '#f43f5e'
 
     },
     extend: {},

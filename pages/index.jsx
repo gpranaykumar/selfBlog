@@ -37,7 +37,7 @@ export default function Home({postsProps, hasPreviousPageProps, hasNextPageProps
         <title>Self Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <FeaturedPosts />
+      {/* <FeaturedPosts /> */}
       <div className='py-4'>
         <input className="shadow appearance-none border border-tSecD rounded-xl w-full
          py-2 px-3 text-gray-700 leading-tight 
@@ -93,6 +93,10 @@ export default function Home({postsProps, hasPreviousPageProps, hasNextPageProps
             <Categories/>
           </div>
         </div>
+      </div>
+      <div className='mt-6'>
+
+      <FeaturedPosts />
       </div>
     </div>
   )

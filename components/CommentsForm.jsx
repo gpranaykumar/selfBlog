@@ -43,9 +43,9 @@ const CommentsForm = ({ slug }) => {
             .then((res) => {
                 setShowSuccessMessage(true)
 
-                setTimeout(() => {
-                    setShowSuccessMessage(false)
-                }, 10000)
+                // setTimeout(() => {
+                //     setShowSuccessMessage(false)
+                // }, 10000)
             })
     }
     return (
@@ -80,7 +80,7 @@ const CommentsForm = ({ slug }) => {
                     <label className='text-gray-500 cursor-pointer ml-2' htmlFor='storeData'>Save my e-mail and name for the next time I comment.</label>
                 </div>
             </div>
-            {error && <p className='text-xs text-red-500'>All fields are required.</p>}
+            {error && <p className='text-xs text-rose'>All fields are required.</p>}
             <div className='mt-8'>
                 <button 
                     type='button' 
@@ -89,7 +89,7 @@ const CommentsForm = ({ slug }) => {
                     >
                         Post Comment
                 </button>
-                {showSuccessMessage && <span className='text-xl float-right font-semibold mt-3 text-green-500'>Comment submitted for review</span>}
+                {showSuccessMessage && <span className='text-sm md:text-xl float-left sm:float-right font-semibold mt-3 text-lime'>Comment submitted for review</span>}
             </div>
         </div>
     )
