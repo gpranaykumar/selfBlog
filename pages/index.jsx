@@ -33,10 +33,6 @@ export default function Home({postsProps, hasPreviousPageProps, hasNextPageProps
   }
   return (
     <div className="container mx-auto px-10 mb-8  ">
-      <Head>
-        <title>Self Blog</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       {/* <FeaturedPosts /> */}
       <div className='py-4'>
         <input className="shadow appearance-none border border-tSecD rounded-xl w-full

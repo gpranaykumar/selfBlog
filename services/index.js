@@ -76,7 +76,7 @@ export const getPostsPagination = async (skip) => {
 export const getPostsPaginationSearch = async (searchValue, skip) => {
   const query = gql`
   query MyQuery($searchValue: String!, $skip: Int!) {
-      postsConnection(orderBy: createdAt_DESC, where: {title_contains: $searchValue}, first: 8, skip:$skip) {
+      postsConnection(orderBy: createdAt_DESC, where: {excerpt_contains: $searchValue}, first: 8, skip:$skip) {
         edges {
           node {
             author {

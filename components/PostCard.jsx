@@ -19,7 +19,9 @@ const PostCard = ({post}) => {
         backgroundSize: 'cover'
     }
     return (
-        <div className='bg-white dark:bg-itemD  shadow-xl  dark:shadow-md dark:shadow-shadowD rounded-lg p-0 lg:p-8 pb-12 mb-8'>
+        <div className='bg-white dark:bg-itemD  shadow-xl  
+        dark:shadow-md dark:shadow-shadowD rounded-lg p-0 lg:p-8 pb-12 mb-8'
+        key={post.title}>
             {/* <div className='relative overflow-hidden shadow-md pb-80 mb-6'>
                 <img 
                     src={post.featuredImage.url}
