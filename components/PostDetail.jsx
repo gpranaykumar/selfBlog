@@ -67,7 +67,7 @@ const PostDetail = ({ post }) => {
             </div>
             </CopyToClipboard>
             <pre key={index}  className="mb-8 bg-itemD dark:border dark:shadow- dark:shadow-shadowD text-white overflow-x-auto p-2">
-              <code key={index} >{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</code>;
+              <code key={index} >{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</code>
             </pre>
             </>
       default:
